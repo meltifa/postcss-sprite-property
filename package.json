@@ -1,6 +1,6 @@
 {
 	"name": "postcss-sprite-property",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Sprite Generator",
 	"main": "lib/index.js",
 	"repository": {
@@ -21,10 +21,12 @@
 	},
 	"dependencies": {
 		"gm": "^1.23.0",
+		"image-size": "^0.6.1",
 		"imagemin": "^5.3.1",
 		"imagemin-pngquant": "^5.0.1",
 		"mkdirp": "^0.5.1",
-		"postcss": "^6.0.8",
+		"node-sass": "^4.5.3",
+		"postcss": "^6.0.9",
 		"spritesmith": "^3.1.1"
 	}
 }
