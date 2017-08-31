@@ -1,6 +1,6 @@
 {
 	"name": "postcss-sprite-property",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Sprite Generator",
 	"main": "lib/index.js",
 	"repository": {
