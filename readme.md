@@ -35,7 +35,7 @@ Webpack 版：https://github.com/HaoyCn/sprite-property-plugin-webpack
 
 - 必需，类型：`Object`
 - **path.output**
-  - 必须，类型：`Function | String`
+  - 必需，类型：`Function | String`
   - 合成的雪碧图的本地路径，将根据 `cwd` 解析为一个绝对地址
   - 如果提供一个函数
     - 接受一个对象为参数，包含 `input` 和 `hash` 两个属性，分别为 CSS 文件路径和雪碧图的 Hash
@@ -71,6 +71,11 @@ Webpack 版：https://github.com/HaoyCn/sprite-property-plugin-webpack
   - 所有切片元素图片的宽高均应是偶数
 
 
+**divide**
+
+- 可选，类型：`Boolean`，默认：`false`
+- 指定 SASS 函数的返回值是否除以 2
+- 指定 PostCSS 是否采用普通图数据（详见 `style` ）
 
 ##### development
 
@@ -82,7 +87,7 @@ Webpack 版：https://github.com/HaoyCn/sprite-property-plugin-webpack
 
 ##### filter
 
-- 必须，类型：`String | RegExp | Function`
+- 必需，类型：`String | RegExp | Function`
 - 接受 CSS 中的 `url()` 内字符串，判定是否是雪碧图切片元素
 - 不同类型判断方法不一：
   - `String`：地址是否包含此字符串
@@ -114,9 +119,8 @@ Webpack 版：https://github.com/HaoyCn/sprite-property-plugin-webpack
 - 值如果是一个函数：
   - 接受一个参数，包含该雪碧图切片的信息
   - 应当返回如 `{ prop: 'background-image', value: 'url(xxx.png)' }` 格式的对象或对象数组
-- 值如果是关键字：
-  - `normal`：`background-image`使用普通图，`background-size`使用普通图宽高，`background-position` 使用在普通图上的偏移
-  - `percent`：仅对 `background-position` 有效，返回百分比形式的偏移
+- 如果 `background-position` 的值如果是字符串 `normal`，则返回百分比形式的偏移
+- 如果 `retina` 和 `divide`同时均为布尔真，则 `background-image` 使用普通图， `background-size`使用普通图宽高，`background-position` 使用在普通图上的偏移
 
 
 
